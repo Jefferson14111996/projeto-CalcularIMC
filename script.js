@@ -125,7 +125,7 @@ if (registrationForm) {
         if (isValid) {
             // Em um projeto real, aqui você faria o POST/fetch para o servidor.
             alert('Registro concluído com sucesso! Redirecionando para a tela de Login.');
-            window.location.href = 'login.html';
+            window.location.href = 'index.html';
         }
     });
 }
