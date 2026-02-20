@@ -12,7 +12,7 @@ const backButton = document.getElementById('back-to-login-btn');
 if (backButton) {
     backButton.addEventListener('click', function() {
         // Redireciona o usuário para a página de login
-        window.location.href = 'login.html'; 
+        window.location.href = 'index.html'; 
     });
 }
 
