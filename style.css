@@ -1,0 +1,255 @@
+/* --- ESTILOS GLOBAIS E CONTAINER --- */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte padrão da página */
+    background-color: #f0f0f0; /* Cor de fundo geral (cinza claro) */
+    display: flex; /* Usa flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Faz o corpo ocupar 100% da altura da janela */
+    margin: 0; /* Remove margens padrão */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.container {
+    background-color: white; /* Fundo branco para o conteúdo principal */
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra leve ao redor */
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 800px; /* Limita a largura máxima */
+    display: flex; /* Estrutura flexível (usada no layout de registro) */
+}
+
+/* --- BARRA LATERAL FINA --- */
+.sidebar {
+    width: 5px; /* Espessura da barra lateral */
+    background-color: #00bfff; /* Azul principal */
+    border-top-left-radius: 15px; /* Arredonda o topo esquerdo */
+    border-bottom-left-radius: 15px; /* Arredonda o fundo esquerdo */
+}
+
+/* Área principal do conteúdo */
+.content {
+    padding: 25px 35px; /* Espaçamento interno */
+    flex-grow: 1; /* Faz o conteúdo ocupar o restante do espaço */
+}
+
+/* --- ESTILOS DO CABEÇALHO (HEADER) --- */
+.header {
+    display: flex; /* Alinha logo e título na mesma linha */
+    align-items: center; /* Centraliza verticalmente os itens */
+    margin-bottom: 30px; /* Espaço abaixo do cabeçalho */
+}
+
+.back-icon {
+    color: #00bfff; /* Azul principal */
+    font-size: 1.5rem; /* Tamanho do ícone */
+    margin-right: 15px; /* Espaço à direita */
+    cursor: pointer; /* Mostra a “mãozinha” ao passar o mouse */
+}
+
+.logo-image {
+    height: 40px; /* Altura do logo */
+    width: auto; /* Largura ajustada automaticamente */
+    margin-right: 15px; /* Espaçamento do logo em relação ao título */
+}
+
+.title {
+    color: #00bfff; /* Azul do título */
+    font-size: 1.6rem; /* Tamanho do texto */
+    font-weight: normal; /* Peso da fonte normal */
+}
+
+/* --- ESTILOS DO GRID E CAMPOS DE FORMULÁRIO --- */
+.form-grid {
+    display: grid; /* Usa layout em grade */
+    grid-template-columns: 1fr 1fr; /* Duas colunas de tamanhos iguais */
+    gap: 20px 40px; /* Espaçamento entre as linhas e colunas */
+    margin-bottom: 30px; /* Espaço abaixo do formulário */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column; /* Coloca o label acima do input */
+}
+
+label {
+    color: #666; /* Cinza escuro */
+    margin-bottom: 5px; /* Espaço abaixo do label */
+    font-size: 0.9rem; /* Tamanho menor */
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    padding: 12px; /* Espaço interno */
+    border: 1px solid #ddd; /* Borda cinza clara */
+    border-radius: 8px; /* Bordas arredondadas */
+    background-color: #fcfcfc; /* Fundo quase branco */
+    font-size: 1rem; /* Tamanho do texto */
+    transition: border-color 0.3s; /* Animação suave ao focar */
+}
+
+/* Efeito ao clicar ou focar no campo */
+input:focus {
+    outline: none; /* Remove o contorno azul padrão */
+    border-color: #00bfff; /* Borda azul ao focar */
+    background-color: white; /* Fundo branco */
+}
+
+/* --- ÍCONE DE VISUALIZAÇÃO DE SENHA (OLHO) --- */
+.password-group {
+    position: relative; /* Necessário para posicionar o ícone dentro do campo */
+}
+
+.toggle-password {
+    position: absolute; /* Posiciona o ícone dentro do campo */
+    right: 15px; /* Distância da borda direita */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(18%); /* Ajuste fino de posição */
+    color: #00bfff; /* Azul */
+    cursor: pointer; /* Mostra o cursor de clique */
+    font-size: 1.1rem; /* Tamanho do ícone */
+}
+
+/* --- ESTILOS DOS BOTÕES --- */
+.buttons-container {
+    display: flex;
+    gap: 20px; /* Espaço entre os botões */
+    margin-top: 30px;
+    justify-content: flex-end; /* Alinha os botões à direita */
+}
+
+.btn {
+    padding: 12px 25px; /* Espaçamento interno */
+    border: none; /* Remove borda padrão */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 1rem;
+    cursor: pointer; /* Cursor de clique */
+    font-weight: bold;
+    min-width: 120px; /* Largura mínima */
+    transition: all 0.2s; /* Transição suave em hover */
+}
+
+.btn-clear {
+    background-color: #6c757d; /* Cinza escuro */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-register {
+    background-color: #00bfff; /* Azul */
+    background-image: linear-gradient(to bottom, #00c3ff 0%, #00b0e0 100%); /* Gradiente */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* =========================================================
+   ESTILOS ESPECÍFICOS PARA A PÁGINA DE LOGIN (login.html)
+   ========================================================= */
+
+/* Container com duas colunas (painel esquerdo + direito) */
+.login-container {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr; /* Esquerda levemente maior que a direita */
+    max-width: 900px;
+    padding: 0;
+    overflow: hidden; /* Evita que conteúdo saia das bordas arredondadas */
+}
+
+/* --- PAINEL ESQUERDO (Logo + chamada para ação) --- */
+.login-left-panel {
+    background-color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    text-align: center;
+    border-right: 1px solid #f0f0f0; /* Linha divisória */
+}
+
+.login-logo-image {
+    height: 100px;
+    width: auto;
+    margin-top: -30px; /* Sobe o logo um pouco */
+    margin-bottom: 25px;
+}
+
+.access-title {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.access-subtitle {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Botão verde de cadastro */
+.btn-access {
+    background-color: #4CAF50 !important; /* Verde */
+    background-image: none !important;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px !important; /* Arredondamento tipo “pílula” */
+    color: white;
+    width: 80%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* --- PAINEL DIREITO (Formulário de login) --- */
+.login-right-panel {
+    background-color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o formulário verticalmente */
+}
+
+.welcome-title {
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Botão “Entrar” azul */
+.btn-login {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    background-color: #00bfff;
+    background-image: linear-gradient(to bottom, #00c3ff 0%, #00b0e0 100%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- RODAPÉ DO LOGIN (Lembrar senha / Esqueci senha) --- */
+.login-footer {
+    display: flex;
+    justify-content: space-between; /* Um item à esquerda e outro à direita */
+    align-items: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.forgot-password {
+    color: #00bfff; /* Azul */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.remember-me {
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+

@@ -1,0 +1,228 @@
+/* =========================================================
+   ESTILOS GLOBAIS DA HOME
+   ========================================================= */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.home-container {
+    position: relative; /* Necessário para posicionar o botão 'Sair' */
+    text-align: center;
+    padding: 50px;
+    max-width: 1000px;
+    width: 90%;
+    margin: 50px auto;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.main-title {
+    font-size: 2rem;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+/* ============================== */
+/* BOTÃO SAIR */
+/* ============================== */
+.logout-section {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.btn-action {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.btn-logout {
+    background-color: #6c757d; /* Cinza do botão "Sair" na imagem */
+    padding: 5px 15px;
+}
+
+/* ============================== */
+/* PAINEL DE UTILIDADES (Calculadora e IMC) */
+/* ============================== */
+.utility-panel {
+    display: flex;
+    justify-content: space-between; /* Espaçamento entre as caixas */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.tool-box {
+    flex: 1; /* Permite que ambos ocupem metade do espaço */
+    min-width: 350px;
+    padding: 20px;
+    border: 1px solid #eee; /* Borda sutil */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.tool-box h2 {
+    color: #333;
+    border-bottom: 2px solid #00bfff;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* ============================== */
+/* CALCULADORA */
+/* ============================== */
+.calculator {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+#calc-display {
+    width: 100%;
+    height: 50px;
+    text-align: right;
+    padding: 5px 10px;
+    font-size: 2em;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    background-color: #f8f8f8;
+    box-sizing: border-box;
+}
+
+.calc-buttons {
+    display: grid;
+    /* 4 colunas de tamanho igual */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px; /* Espaço entre os botões */
+}
+
+.calc-btn {
+    /* Tornar os botões quadrados e visualmente corretos */
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 50px; /* Centraliza o texto verticalmente */
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.1s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra para o efeito 3D sutil */
+}
+
+.calc-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Cores dos operadores e utilidades */
+.utility {
+    background-color: #ff9900; /* Laranja do 'C' */
+    color: white;
+}
+.operator, .equal {
+    background-color: #00bfff; /* Azul dos operadores */
+    color: white;
+}
+.operator:hover, .equal:hover {
+    background-color: #0099cc;
+}
+
+/* Layout dos botões especiais */
+.equal {
+    grid-row: span 2; /* Ocupa 2 linhas (o que seria o + e o =) */
+    height: auto; /* Permite que o span 2 funcione */
+}
+
+.zero-btn {
+    grid-column: span 2; /* Ocupa 2 colunas */
+}
+
+
+/* ============================== */
+/* IMC */
+/* ============================== */
+.imc-box p {
+    margin-top: -10px;
+    color: #666;
+}
+
+.imc-box .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.imc-box label {
+    font-weight: bold; /* De volta ao negrito */
+    margin-bottom: 5px;
+}
+
+.imc-box input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.imc-buttons-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    justify-content: space-between;
+}
+
+.btn-imc, .btn-imc-clear {
+    width: 100%;
+    flex-grow: 1;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.btn-imc {
+    background-color: #00bfff; /* Azul primário */
+}
+
+.btn-imc-clear {
+    background-color: #6c757d; /* Cinza igual ao botão Limpar da tela de registro */
+}
+
+.imc-result {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #00bfff;
+    text-align: left;
+}
+
+.imc-classification {
+    margin-top: 10px;
+    font-weight: bold;
+}
