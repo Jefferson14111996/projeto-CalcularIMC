@@ -1,85 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - CálcularIMC</title> 
+    <!-- Define que o documento é HTML5 -->
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres (permite acentuação e caracteres especiais) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Faz o layout se adaptar a dispositivos móveis -->
     
-    <link rel="stylesheet" href="style.css"> 
-    <link rel="stylesheet" href="style-home.css"> 
+    <title>Login - CálcularIMC</title> <!-- Título exibido na aba do navegador -->
+
+    <!-- Importa a biblioteca de ícones Font Awesome (para o ícone do olho de senha) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Importa o arquivo CSS local com os estilos da página -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Importa o script de JavaScript que controla o comportamento da página de login -->
+    <!-- O atributo 'defer' faz o script carregar depois que o HTML for totalmente lido -->
+    <script src="login.js" defer></script>
 </head>
+
 <body>
 
-    <div class="home-container">
+    <!-- Container principal que engloba toda a tela de login -->
+    <div class="container login-container">
         
-        <div class="logout-section">
-            <button id="logout-btn" class="btn-action btn-logout">Sair</button>
+        <!-- Painel esquerdo da tela de login -->
+        <div class="login-left-panel">
+            
+            <!-- Logotipo do sistema -->
+            <img src="Logo CalculoIMC.svg" alt="Logomarca FreequenSee" class="login-logo-image">
+            
+            <!-- Título chamando novos usuários -->
+            <h2 class="access-title">Primeiro Acesso?</h2>
+            
+            <!-- Botão que leva à página de cadastro (index.html) -->
+            <a href="cadastro.html" class="btn btn-register btn-access">Cadastre a sua Conta</a>
+
+            <!-- Frase de incentivo -->
+            <p class="access-subtitle">Venha saber como está seu IMC e fazer seu CÁLCULO!</p>
         </div>
-        
-        <h1 class="main-title">Bem-vindo à Sua Área Exclusiva!</h1>
-        <p class="subtitle">Acesse as utilidades do sistema abaixo.</p>
-        
-        <div id="date-time-display" class="date-time-box"></div>
 
+        <!-- Painel direito com o formulário de login -->
+        <div class="login-right-panel">
 
-        <div class="utility-panel">
+            <!-- Título de boas-vindas -->
+            <h1 class="welcome-title">Bem-vindo ao CálcularIMC!</h1>
+            
+            <!-- Formulário de login -->
+          <form id="login-form">
+    <div class="form-group">
+        <label for="login-email">E-mail:</label>
+        <input type="email" id="login-email" required>
+    </div>
+    <div class="form-group password-group">
+        <label for="login-senha">Senha:</label>
+        <input type="password" id="login-senha" required>
+        </div>
+    
+    <button type="submit" class="btn btn-login">Entrar</button>
+</form>
 
-            <div class="calculator-box tool-box">
-                <h2>Calculadora</h2>
-                <div class="calculator">
-                    <input type="text" id="calc-display" disabled value="0">
-                    <div class="calc-buttons">
-                        <button class="calc-btn utility" data-action="clear">C</button>
-                        <button class="calc-btn operator" data-action="divide">/</button>
-                        <button class="calc-btn operator" data-action="multiply">*</button>
-                        <button class="calc-btn operator" data-action="backspace">←</button>
-
-                        <button class="calc-btn number">7</button>
-                        <button class="calc-btn number">8</button>
-                        <button class="calc-btn number">9</button>
-                        <button class="calc-btn operator" data-action="subtract">-</button>
-
-                        <button class="calc-btn number">4</button>
-                        <button class="calc-btn number">5</button>
-                        <button class="calc-btn number">6</button>
-                        <button class="calc-btn operator" data-action="add">+</button>
-
-                        <button class="calc-btn number">1</button>
-                        <button class="calc-btn number">2</button>
-                        <button class="calc-btn number">3</button>
-                        <button class="calc-btn equal" data-action="calculate">=</button>
-                        
-                        <button class="calc-btn zero-btn number">0</button>
-                        <button class="calc-btn number">.</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="imc-box tool-box">
-                <h2>Cálculo de IMC</h2>
-                <p>Índice de Massa Corporal (IMC)</p>
+<script src="script-login.js"></script>
                 
-                <div class="form-group">
-                    <label for="imc-peso">Peso (kg):</label>
-                    <input type="number" id="imc-peso" placeholder="Ex: 75" step="0.1" min="1">
-                </div>
-                
-                <div class="form-group">
-                    <label for="imc-altura">Altura (m):</label>
-                    <input type="number" id="imc-altura" placeholder="Ex: 1.75" step="0.01" min="0.5">
-                </div>
-                
-                <div class="imc-buttons-container"> 
-                    <button id="imc-btn" class="btn-imc btn-action">Calcular IMC</button>
-                    <button id="imc-clear-btn" class="btn-imc-clear btn-action">Limpar</button>
+                <!-- Rodapé do formulário -->
+                <div class="login-footer">
+                    <!-- Caixa de seleção "Lembrar a senha" -->
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember-me">
+                        Lembrar a senha
+                    </label>
+
+                    <!-- Link para recuperação de senha -->
+                    <a href="#" class="forgot-password">Esqueci a minha senha</a>
                 </div>
 
-                <div class="imc-result">Seu IMC: <span id="imc-output">0.00</span></div>
-                <div id="imc-classificacao" class="imc-classification"></div>
-            </div>
+            </form>
         </div>
     </div>
-
-    <script src="script-home.js"></script>
 </body>
 </html>
